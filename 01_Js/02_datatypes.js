@@ -20,4 +20,8 @@ console.table([name,id,bool])
 console.log(typeof undefined);
 // ans undefied
 console.log(typeof null)    
-// ans objece
+// ans object
+
+
+// https://tc39.es/ecma262/#prod-Comment
+// original documetatios
