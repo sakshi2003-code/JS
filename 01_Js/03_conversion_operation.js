@@ -42,3 +42,10 @@
 // 1=>true , 0=>false
 // " " =>false
 // "sakshi"=>true
+
+
+// console.log("2"+2) => 22
+// console.log(2+2+"4"+2+6);=>4426
+// console.log(+true); =>1
+// console.log(+ " "); =>0
+
