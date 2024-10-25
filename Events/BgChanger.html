@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg-Changer</title>
+</head>
+<body style="background-color: #212121;">
+    <div class="contaier">
+        <h1>Start should change in the backgrond color</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script>
+        
+        function randomColor() {
+            const range="0123456789ABCDEF"
+        let id='#'
+        for(let i=0;i<6;i++){
+          id+= range[ Math.floor(Math.random()*16)];
+         
+          
+        }
+        console.log(id);
+        return id;
+        }
+     let intervalId;
+       let startBgChanger= function () {
+        if(!intervalId){
+            intervalId= setInterval(changeBg,1000)
+        }
+        // optimization
+        
+        }
+        function changeBg() {
+          let body=document.querySelector('body')
+            body.style.backgroundColor=randomColor();
+           
+           
+            
+        }
+        let start =document.getElementById('start')
+        start.addEventListener('click',startBgChanger)
+        let stop =document.getElementById('stop')
+        let stopBgChanger=function () {
+            console.log("inside stop");
+            
+            clearInterval( intervalId)
+           intervalId=null;
+        //    optimization
+        }
+        stop.addEventListener('click',stopBgChanger)
+        
+    </script>
+</body>
+</html>
