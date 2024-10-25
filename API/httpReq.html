@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HttpRequest Practice
+    </title>
+</head>
+<body style="background-color: #212121;">
+    The XMLHttpRequest Object
+The XMLHttpRequest object can be used to request data from a web server.
+
+
+Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+<br>
+<br>
+<div></div>
+<button class="btn">Click here for info</button>
+<div id="info">
+
+</div>
+    <script>
+        const requestUrl='https://api.github.com/users/hiteshchoudhary'
+        const xhr=new XMLHttpRequest();
+        xhr.open('GET',requestUrl)
+      // get method 
+ 
+      xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            const data= JSON.parse(this.responseText)
+            console.log(data.followers);
+            console.log(data.avatar_url);
+            let button=document.querySelector('.btn');
+ button.addEventListener('click',showDescription)
+     function showDescription(){
+
+        let info=document.getElementById('info');
+        let div=document.createElement('div')
+        let h1=document.createElement('h1')
+        let text=`here is your followers ${data.followers}.`
+       h1.appendChild(document.createTextNode(text))
+        let img =document.createElement('img')
+
+        img.src=data.avatar_url;
+ 
+        div.appendChild(img)
+        info.appendChild(div)
+        div.appendChild(h1)
+        }
+      
+     }
+    }
+    //   continuosly watch krne ko
+     
+      
+        xhr.send()
+       
+    </script>
+</body>
+
+</html>
