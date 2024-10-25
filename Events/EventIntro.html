@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    <div class="images">
+        <h1>Doraemon</h1>
+        <ul>
+            <li><img width="200px"  src="https://tse1.mm.bing.net/th?id=OIP.YfstaxxV6NVxx5RhWfYKHgHaHu&pid=Api&P=0&h=180" alt="doraemon" id="doraemon"></li>
+            <li><img  width="200px"   src="https://tse1.mm.bing.net/th?id=OIP.TuM4E6aFTQCZKo-njrriLQHaEK&pid=Api&P=0&h=180" alt="nobita" id="nobita"></li>
+            <li><img width="200px"   src="https://tse1.mm.bing.net/th?id=OIP.YbK6QqL5B4a-B2hMZI4xAQHaFj&pid=Api&P=0&h=180" alt="shizuka" id="shizuka"></li>
+            <li><img width="200px"   src="https://tse2.mm.bing.net/th?id=OIP.ccj-gwRamxlaajNHAc89ZwHaHa&pid=Api&P=0&h=180" alt="sunio" id="sunio"></li>
+            <li><img width="200px"   src="https://tse1.mm.bing.net/th?id=OIP.ONedBBEDjda0GIt29po2kAHaGL&pid=Api&P=0&h=180" alt="Giyan" id="giyan"></li>
+        </ul>
+    </div>
+    <script>
+        // event bubbling
+       /* document.querySelector('.images').addEventListener('click',function(e){
+           console.log("you clicked div")
+        },false)
+        document.getElementById('nobita').addEventListener('click',function (e) {
+            console.log("doraemon bachaooo!");
+            // e.stopPropagation() it will prevent from event bublling
+          
+           
+        },false)
+*/
+        const ul=document.querySelector('.images');
+        // console.log(ul);
+        ul.addEventListener('mouseover',function(e){
+            if(e.target.tagName ==='IMG'){
+                console.log(e.target.id);
+                
+                let removeIt=e.target.parentNode;
+             removeIt.style.backgroundColor='red'
+            }},false)
+        ul.addEventListener('click',function(e){
+            if(e.target.tagName ==='IMG'){
+                console.log(e.target.id);
+                
+                let removeIt=e.target.parentNode;
+              removeIt.remove()
+            }
+       
+    //    removeIt.parentNode.removeChild(removeIt)
+    // another method
+         },false)
+        
+    </script>
+</body>
+</html>

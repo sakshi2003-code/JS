@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Time</title>
+    <style>
+      body {
+        background-color: #212121;
+      }
+      .center{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+       height: 100vh;
+       
+       
+      }
+      #banner{
+        color:white;
+        font-size: 40px;
+        padding:20px 50px;
+        margin-
+
+
+        font-weight: 1rem;
+      }
+      #clock{
+        margin: 2rem;
+        background-color: yellow;
+       padding: 2rem;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div id="banner">Yout Local Time</div>
+      <div id="clock"> </div>
+    </div>
+    <script>
+        const clock=document.getElementById('clock')
+       
+        // console.log(date.toLocaleTimeString());
+        setInterval(function(){
+            let date=new Date();
+            // console.log(date.toLocaleTimeString())
+            clock.innerHTML=date.toLocaleTimeString();
+        },1000)
+        
+    </script>
+  </body>
+</html>
